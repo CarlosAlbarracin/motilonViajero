@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Hotel extends StatelessWidget {
-  Hotel({super.key});
+class Destinations extends StatelessWidget {
+  Destinations({super.key});
 
-  Image img = Image.asset('assets/bochalema.jpg');
-  Image img2 = Image.asset('assets/cacota.jpg');
-  Image img3 = Image.asset('assets/durania.jpg');
+  Image img = Image.asset('assets/images/abiansemal.webp');
+  Image img2 = Image.asset('assets/images/Santorini.webp');
+  Image img3 = Image.asset('assets/images/LakeArrowhead.webp');
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 50, left: 50, right: 50),
+      padding: const EdgeInsets.only(top: 30, left: 30, right: 30),
       child: Column(
         children: [
           Column(

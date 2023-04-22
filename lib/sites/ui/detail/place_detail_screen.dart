@@ -142,10 +142,7 @@ class _PlaceDetailScreenState extends State<PlaceDetailScreen> {
                           ),
                           const SizedBox(height: 10),
                           Text(widget.place.description),
-                          const SizedBox(height: 10),
-                          Text(widget.place.description),
-                          const SizedBox(height: 10),
-                          Text(widget.place.description),
+                         
                           const SizedBox(height: 20),
                           const Text(
                             'PLACES IN THIS COLLECTION',

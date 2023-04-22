@@ -5,6 +5,8 @@ import 'package:motilon_viajero/sites/ui/detail/place_detail_screen.dart';
 import 'package:motilon_viajero/sites/ui/feed/widgets/place_card.dart';
 import 'package:motilon_viajero/sites/ui/feed/widgets/travel_navigation_bar.dart';
 
+import 'package:motilon_viajero/views/nabvar.dart';
+
 
 class FeedScreen extends StatelessWidget {
   const FeedScreen({super.key});
@@ -12,16 +14,15 @@ class FeedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       drawer: NavBar(   
+      ),
       appBar: AppBar(
         title: const Text('Feed'),
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(CupertinoIcons.search),
-        ),
+        
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(CupertinoIcons.star),
+            icon: const Icon(CupertinoIcons.search),
           ),
         ],
       ),

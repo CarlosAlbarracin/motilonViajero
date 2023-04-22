@@ -1,27 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:motilon_viajero/login/login.dart';
-import 'package:motilon_viajero/login/register.dart';
-import 'package:motilon_viajero/menu/views/pages/home_page.dart';
-import 'package:motilon_viajero/views/inicio.dart';
+
+import 'package:hexcolor/hexcolor.dart';
+
+import 'login/splash_screen.dart';
+
+
 
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final Color _primaryColor = HexColor('#000000');
+  final Color _accentColor = HexColor('#A71111');
+  
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-         debugShowCheckedModeBanner: false,
-        initialRoute: 'login',
-        routes: {
-          'login': (context) => const MyLogin(),
-          'register': (context) => const MyRegister(),
-          'inicio': (context) =>  HomePage(),
-    });
+         title: 'Flutter Demo',
+      theme: ThemeData(
+      primaryColor: _primaryColor,
+       accentColor: _accentColor,
+       
+        primarySwatch: Colors.blue,
+      ),
+      home:  SplashScreen(title: 'Bienvenidos',),
+       
+        
+    );
+   
   }
 }
 

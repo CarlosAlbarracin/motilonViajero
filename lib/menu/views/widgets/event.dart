@@ -13,19 +13,17 @@ class Event extends StatelessWidget {
     return Container(
       height: 210,
       width: 230,
-      padding: EdgeInsets.only(left: 20, top: 20),
+      padding: const EdgeInsets.only(left: 20, top: 20),
       decoration: BoxDecoration(
           // color: mainCOlor,
           borderRadius: BorderRadius.all(Radius.circular(20)),
           image: DecorationImage(
               image: AssetImage(place.imageUrl), fit: BoxFit.cover)),
+            
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            '${place.event},',
-            style: textStyle3.copyWith(fontWeight: FontWeight.bold),
-          ),
+          
           Text(
             '${place.city}',
             style: textStyle3.copyWith(fontWeight: FontWeight.bold),
@@ -46,7 +44,10 @@ class Event extends StatelessWidget {
             ],
           )
         ],
+        
       ),
+      
+      
     );
   }
 }

@@ -42,7 +42,7 @@ class PlaceCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _UserInformationRow(user: place.user),
+           
             const Spacer(),
             Text(place.name, style: context.headline2),
             const SizedBox(height: 10),

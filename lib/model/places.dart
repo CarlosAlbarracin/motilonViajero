@@ -24,7 +24,7 @@ class Place {
   static final places = [
     Place(
       id: '3',
-      name: 'Riviera Maya',
+      name: 'Chinacota',
       likes: 500,
       shared: 240,
       description:
@@ -32,7 +32,7 @@ class Place {
           ' playas de arena blanca, sitios arqueológicos, parques '
           'naturales y actividades acuáticas únicas',
       imagesUrl: [
-        'https://images.unsplash.com/photo-1564852694965-94accf8e0713?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80',
+        'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/e3/1e/21/hotel-y-centro-de-convenciones.jpg?w=500&h=300&s=1',
         'https://images.unsplash.com/photo-1552074284-5e88ef1aef18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=60',
         'https://images.unsplash.com/photo-1560242374-f222add02c68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=60'
       ],
@@ -41,7 +41,7 @@ class Place {
     ),
     Place(
       id: '1',
-      name: 'Tulum',
+      name: 'Pamplona',
       likes: 140,
       shared: 49,
       description:
@@ -61,7 +61,7 @@ class Place {
       id: '2',
       likes: 29,
       shared: 40,
-      name: 'Ometepec',
+      name: 'Cacota',
       description:
           '''Ometepec (en náhuatl: ome, tepetl, 'dos, cerros''lugar entre dos cerros') es un poblado y cabecera del municipio homónimo en el estado mexicano de Guerrero.''',
       imagesUrl: [

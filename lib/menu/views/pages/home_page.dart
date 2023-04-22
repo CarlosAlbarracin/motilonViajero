@@ -4,7 +4,8 @@ import 'package:motilon_viajero/menu/models/place.dart';
 import 'package:motilon_viajero/menu/theme.dart';
 import 'package:motilon_viajero/menu/views/widgets/event.dart';
 import 'package:motilon_viajero/menu/views/widgets/place_card.dart';
-import 'package:motilon_viajero/views/navbar.dart';
+import 'package:motilon_viajero/views/nabvar.dart';
+
 
 
 class HomePage extends StatelessWidget {
@@ -12,18 +13,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     List<String> titles = [
       'All',
-      'Asia',
-      'America',
-      'Europe',
-      'Africa',
-      'Australia'
+      'Ocaña',
+      'Patios',
+      'Cacota',
+      'Pamplona',
+      'Pamplona'
     ];
     return Scaffold(
-      drawer: NavBar(
-        
+      drawer: NavBar(   
       ),
       appBar: AppBar(
         title: const Text("Menu"),
+        backgroundColor: Colors.black,
       ),
       backgroundColor: bgColor,
       body: ListView(
@@ -138,11 +139,14 @@ class HomePage extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.only(left: 30, right: 30, top: 40),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Wrap(
+              
+              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              
+              
               children: [
                 Text(
-                  'Ongoing Events',
+                  'Destinos para los amantes de la gastronomia',
                   style: textStyle2,
                 ),
                 Text(
@@ -153,6 +157,39 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Container(
+            height: 210,
+            width: 230,
+            margin: EdgeInsets.only(top: 40, right: 30, left: 30),
+            child: ListView.builder(
+                itemCount: gastronomy.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (_, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 20),
+                    child: Event(gastronomy[index]),
+                  );
+                }),
+          ),
+          SizedBox(
+            height: 50,
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 30, right: 30, top: 40),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Planes turisticos',
+                  style: textStyle2,
+                ),
+                Text(
+                  'See All',
+                  style: textStyle4,
+                )
+              ],
+            ),
+          ),
+             Container(
             height: 210,
             width: 230,
             margin: EdgeInsets.only(top: 40, right: 30, left: 30),
@@ -168,7 +205,8 @@ class HomePage extends StatelessWidget {
           ),
           SizedBox(
             height: 100,
-          )
+          ),
+          Text("Qute te parece si agregamos\nuna nueva ciudad",textAlign: TextAlign.start,),
         ],
       ),
     );
