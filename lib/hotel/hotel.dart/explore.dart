@@ -58,50 +58,14 @@ class Explore extends StatelessWidget {
               const SizedBox(
                 width: 20,
               ),
-              Column(
-                children: [
-                  Image.asset(
-                    'assets/images/airbnb.png',
-                    height: 20,
-                    width: 20,
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  const Text(
-                    'Trips',
-                    style: TextStyle(
-                        color: Colors.grey, fontWeight: FontWeight.w500),
-                  )
-                ],
-              ),
+              
               const SizedBox(
                 width: 20,
               ),
               Column(
                 children: [
                   Image.asset(
-                    'assets/images/chat.png',
-                    height: 20,
-                    width: 20,
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  const Text(
-                    'Inbox',
-                    style: TextStyle(
-                        color: Colors.grey, fontWeight: FontWeight.w500),
-                  )
-                ],
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              Column(
-                children: [
-                  Image.asset(
-                    'assets/images/user-2.png',
+                    'assets/user-2.png',
                     height: 20,
                     width: 20,
                   ),
@@ -123,11 +87,7 @@ class Explore extends StatelessWidget {
           child: SingleChildScrollView(
         child: Column(
           children: [
-            const WhereTo(),
             
-            const SizedBox(
-              height: 20,
-            ),
             const Divider(
               height: 0,
             ),

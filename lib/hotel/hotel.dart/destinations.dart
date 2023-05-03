@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class Destinations extends StatelessWidget {
   Destinations({super.key});
 
-  Image img = Image.asset('assets/images/abiansemal.webp');
-  Image img2 = Image.asset('assets/images/Santorini.webp');
-  Image img3 = Image.asset('assets/images/LakeArrowhead.webp');
+  Image img = Image.asset('assets/chinacota.jpg');
+  Image img2 = Image.asset('assets/durania.jpg');
+  Image img3 = Image.asset('assets/ocana.jpg');
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -36,6 +36,7 @@ class Destinations extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -43,6 +44,7 @@ class Destinations extends StatelessWidget {
                     'Abiansemal, Indonesia',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
+                  
                   Row(
                     children: const [
                       Icon(
@@ -58,7 +60,8 @@ class Destinations extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                           )),
                     ],
-                  )
+                  ),
+                  
                 ],
               ),
               const Text(
@@ -86,7 +89,8 @@ class Destinations extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                       ))
                 ],
-              )
+              ),
+              
             ],
           ),
           const SizedBox(
