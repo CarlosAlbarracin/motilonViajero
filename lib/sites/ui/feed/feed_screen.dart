@@ -14,10 +14,10 @@ class FeedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       drawer: NavBar(   
+       drawer: const NavBar(   
       ),
       appBar: AppBar(
-        title: const Text('Feed'),
+        title: const Text('Municipios'),
         
         actions: [
           IconButton(

@@ -1,5 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -21,26 +20,26 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
   @override
   Widget build(BuildContext context) {
-    double _headerHeight = 300;
+    double headerHeight = 300;
     return Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                height: _headerHeight,
-                child: HeaderWidget(_headerHeight, true, Icons.password_rounded),
+              SizedBox(
+                height: headerHeight,
+                child: HeaderWidget(headerHeight, true, Icons.password_rounded),
               ),
               SafeArea(
                 child: Container(
-                  margin: EdgeInsets.fromLTRB(25, 10, 25, 10),
-                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  margin: const EdgeInsets.fromLTRB(25, 10, 25, 10),
+                  padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                   child: Column(
                     children: [
                       Container(
                         alignment: Alignment.topLeft,
-                        margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                        child: Column(
+                        margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                        child: const Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -72,12 +71,13 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                           ],
                         ),
                       ),
-                      SizedBox(height: 40.0),
+                      const SizedBox(height: 40.0),
                       Form(
                         key: _formKey,
                         child: Column(
                           children: <Widget>[
                             Container(
+                              decoration: ThemeHelper().inputBoxDecorationShaddow(),
                               child: TextFormField(
                                 decoration: ThemeHelper().textInputDecoration("Email", "Enter your email"),
                                 validator: (val){
@@ -90,9 +90,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                                   return null;
                                 },
                               ),
-                              decoration: ThemeHelper().inputBoxDecorationShaddow(),
                             ),
-                            SizedBox(height: 40.0),
+                            const SizedBox(height: 40.0),
                             Container(
                               decoration: ThemeHelper().buttonBoxDecoration(context),
                               child: ElevatedButton(
@@ -102,7 +101,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                                       40, 10, 40, 10),
                                   child: Text(
                                     "Send".toUpperCase(),
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.white,
@@ -114,27 +113,27 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                                     Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => ForgotPasswordVerificationPage()),
+                                          builder: (context) => const ForgotPasswordVerificationPage()),
                                     );
                                   }
                                 },
                               ),
                             ),
-                            SizedBox(height: 30.0),
+                            const SizedBox(height: 30.0),
                             Text.rich(
                               TextSpan(
                                 children: [
-                                  TextSpan(text: "Remember your password? "),
+                                  const TextSpan(text: "Remember your password? "),
                                   TextSpan(
                                     text: 'Login',
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {
                                         Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) => LoginPage()),
+                                          MaterialPageRoute(builder: (context) => const LoginPage()),
                                         );
                                       },
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontWeight: FontWeight.bold
                                     ),
                                   ),

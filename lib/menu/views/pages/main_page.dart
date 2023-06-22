@@ -6,17 +6,19 @@ import 'package:motilon_viajero/menu/views/widgets/custom_bottom_nav.dart';
 
 
 class MainPage extends StatelessWidget {
+  const MainPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         SafeArea(
             child: PageView(
-          children: [
+          children: const [
             HomePage(),
           ],
         )),
-        Align(alignment: Alignment.bottomCenter, child: CustomNavbar())
+        const Align(alignment: Alignment.bottomCenter, child: CustomNavbar())
       ],
     );
   }

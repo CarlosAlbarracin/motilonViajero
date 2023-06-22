@@ -1,6 +1,7 @@
 class TravelPlace {
   TravelPlace({
     required this.name,
+    required this.subtitle,
     required this.user,
     required this.imagesUrl,
     this.id = '',
@@ -13,6 +14,7 @@ class TravelPlace {
 
   final String id;
   final String name;
+  final String subtitle;
   final TravelUser user;
   final StatusTag statusTag;
   final int shared;
@@ -25,29 +27,32 @@ class TravelPlace {
     TravelPlace(
       id: '1',
       name: 'Chinacota',
+      subtitle: 'Chinacota',
       likes: 500,
       shared: 240,
       description:
-          'Pueblo con hermosos paisajes montañosos y arquitectura colonial,'
-          ' playas de arena blanca, sitios arqueológicos, parques '
-          'naturales y actividades acuáticas únicas',
+          'Chinacota tierra merecedora de ser considerada "La Casa de Todos" gracias a la belleza de sus paisajes,'
+          'donde la naturaleza se conjuga en esencial armonia con los paraisos de descanso y recreacion que posee. Al ingresar al municipio se puede observar como este es un inmenso jardin, '
+          'repleto de multiples colores que dan vida y hermosura a cada lugar',
       imagesUrl: [
         'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/e3/1e/21/hotel-y-centro-de-convenciones.jpg?w=500&h=300&s=1',
         'https://visitcucuta.com/wp-content/uploads/2020/11/TOUR-CHINACOTA-3.jpg',
         'https://turismoi.co/uploads/co/photo/photo_file/14491/IMG_20201015_154518.jpg'
       ],
       user: TravelUser.alex,
-      locationDesc: 'QUINTANA ROO Mexico, Coast of the Caribbean Sea',
+      locationDesc: 'Chinacota, Norte de Santander',
     ),
     TravelPlace(
       id: '2',
       name: 'Pamplona',
+      subtitle: 'Pamplona',
       likes: 140,
       shared: 49,
       description:
-          'Tulum fue una ciudad amurallada de la cultura maya ubicada en el '
-          'Estado de Quintana Roo, en el sureste de México, en la costa'
-          ' del mar Caribe.',
+          'Pamplona es un municipio ubicado en el departamento de Norte de Santander, Colombia.  '
+          'Es conocido por su arquitectura colonial y su hermoso centro histórico. La ciudad está rodeada de montañas y cuenta con un clima agradable. '
+          ' del mar Caribe.'
+          'Pamplona es reconocida por ser cuna de importantes personajes históricos y culturales, y también es famosa por su tradicional Festival de las Colonias, en el que se celebran las diferentes culturas presentes en la región.',
       imagesUrl: [
         'https://turismonortedesantander.com/wp-content/uploads/Pamplona_norte-de-santander.jpg',
         'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/f0/c3/ba/cariongo-plaza-hotel.jpg?w=600&h=400&s=1',
@@ -55,15 +60,16 @@ class TravelPlace {
       ],
       statusTag: StatusTag.event,
       user: TravelUser.mario,
-      locationDesc: 'QUINTANA ROO Mexico, in southeastern Mexico',
+      locationDesc: 'Pamplona, Norte de Santander',
     ),
     TravelPlace(
       id: '3',
       likes: 29,
       shared: 40,
       name: 'ocaña',
+      subtitle: 'Ocaña',
       description:
-          '''Ometepec (en náhuatl: ome, tepetl, 'dos, cerros''lugar entre dos cerros') es un poblado y cabecera del municipio homónimo en el estado mexicano de Guerrero.''',
+          ''' Ocaña es un municipio ubicada en el departamento de Norte de Santander, en Colombia. Es reconocida por su riqueza histórica y cultural. En Ocaña se encuentran numerosos monumentos y sitios de interés, como la Catedral Basílica Menor de Nuestra Señora del Carmen, el Templo de Santa Clara y el Museo de la Memoria Histórica. La ciudad también es famosa por sus festividades religiosas y culturales, como la Semana Santa y el Festival Folclórico y Reinado Nacional del Bambuco.''',
       imagesUrl: [
         'https://ocanansantander.files.wordpress.com/2011/10/rosangela-castro.jpg',
         'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Oca%C3%B1a_-_panoramio_%281%29.jpg/600px-Oca%C3%B1a_-_panoramio_%281%29.jpg',
@@ -71,17 +77,18 @@ class TravelPlace {
       ],
       statusTag: StatusTag.event,
       user: TravelUser.luna,
-      locationDesc: 'GUERRERO MEXICO Ometepec City',
+      locationDesc: 'Ocaña, Norte de Santander',
     ),
     TravelPlace(
       id: '4',
       name: 'Cucuta',
+      subtitle: 'Cucuta',
       shared: 500,
       likes: 39,
       description:
-          'Acapulco se encuentra a la altura de los mejores resorts del'
-          ' mundo. Representa las vacaciones ideales para cualquier '
-          'exigencia',
+          'Cúcuta es la capital del departamento de Norte de Santander, Colombia. Es una ciudad fronteriza, limitando con Venezuela. Cúcuta es reconocida como un importante centro comercial y de negocios, con una amplia oferta de servicios y actividades económicas.'
+          'La ciudad cuenta con una rica historia, con monumentos y sitios de interés como la Catedral de San José y el Puente Internacional Simón Bolívar.'
+          'Además, es conocida por su festival anual de la Cumbia, una de las danzas más representativas de la región',
       imagesUrl: [
         'https://turismonortedesantander.com/wp-content/uploads/Loma-de-Bolivar.jpg',
         'https://i0.wp.com/visitcucuta.com/wp-content/uploads/2020/03/CERRO-JESUS-NAZARENO-2.jpg?resize=768%2C563&ssl=1',
@@ -89,17 +96,18 @@ class TravelPlace {
       ],
       statusTag: StatusTag.event,
       user: TravelUser.lili,
-      locationDesc: 'GUERRERO MEXICO ON THE SOUTHERN COAST OF THE COUNTRY',
+      locationDesc: 'Cucuta, Norte de Santander',
     ),
     TravelPlace(
       id: '5',
       name: 'Cacota',
+      subtitle: 'Cacota',
       likes: 140,
       shared: 49,
       description:
-          'Tulum fue una ciudad amurallada de la cultura maya ubicada en el '
-          'Estado de Quintana Roo, en el sureste de México, en la costa'
-          ' del mar Caribe.',
+          ' Cácota es un municipio situado en el departamento de Norte de Santander, Colombia. Es conocido por su hermoso entorno natural, con paisajes montañosos y una gran diversidad de flora y fauna. '
+          ' El municipio cuenta con varios atractivos turísticos, como el Parque Natural Regional El Tamá y la Laguna de Cácota. '
+          ' Además, en Cácota se celebra la Fiesta de San Pedro, una tradición popular en la que se realizan procesiones y actividades culturales',
       imagesUrl: [
         'https://vamosllegando.com/wp-content/uploads/2022/07/cacota-norte-de-santander-como-llegar-desde-cucuta-desde-pamplona.jpg',
         'https://i0.wp.com/tintatic.com/wp-content/uploads/2022/03/20220329_Cacota-parque-principal-e-iglesia_4280-scaled.jpg?fit=1280%2C960&ssl=1',
@@ -107,17 +115,18 @@ class TravelPlace {
       ],
       statusTag: StatusTag.event,
       user: TravelUser.mario,
-      locationDesc: 'QUINTANA ROO Mexico, in southeastern Mexico',
+      locationDesc: 'Cacota, Norte de Santander',
     ),
     TravelPlace(
       id: '6',
       name: 'Bochalema',
+      subtitle: 'Bochalema',
       likes: 140,
       shared: 49,
       description:
-          'Tulum fue una ciudad amurallada de la cultura maya ubicada en el '
-          'Estado de Quintana Roo, en el sureste de México, en la costa'
-          ' del mar Caribe.',
+          'Bochalema es un municipio colombiano ubicado en el departamento de Norte de Santander. Es reconocido por su producción agrícola, especialmente de caña de azúcar y productos derivados. '
+          ' Bochalema cuenta con hermosos paisajes rurales, con extensas plantaciones y montañas. '
+          'El municipio también es famoso por su festival anual de la Caña de Azúcar, en el que se realizan desfiles, muestras gastronómicas y actividades culturales.',
       imagesUrl: [
         'https://visitcucuta.com/wp-content/uploads/2020/03/DESTINO-TURISTICO-BOCHALEMA-5.jpg',
         'https://cloudfront-us-east-1.images.arcpublishing.com/prisaradioco/KJJ33Z72KNKHXBTYFO53HEN3PM.jpg',
@@ -125,17 +134,18 @@ class TravelPlace {
       ],
       statusTag: StatusTag.event,
       user: TravelUser.mario,
-      locationDesc: 'QUINTANA ROO Mexico, in southeastern Mexico',
+      locationDesc: 'Bochalema, Norte de Santander',
     ),
     TravelPlace(
       id: '7',
       name: 'Villa del Rosario',
+      subtitle: 'Villa del Rosario',
       likes: 140,
       shared: 49,
       description:
-          'Tulum fue una ciudad amurallada de la cultura maya ubicada en el '
-          'Estado de Quintana Roo, en el sureste de México, en la costa'
-          ' del mar Caribe.',
+          'Villa del Rosario es una localidad situada en el departamento de Norte de Santander, Colombia. Es reconocida por su importancia histórica como cuna de la independencia de Colombia.'
+          'En este municipio se encuentra el Santuario de Nuestra Señora de la Laja, un importante lugar de peregrinación. Villa del Rosario cuenta también con un hermoso centro histórico, con calles empedradas y casas coloniales. '
+          ' Además, es conocida por sus festividades religiosas y tradiciones culturales.',
       imagesUrl: [
         'https://turismonortedesantander.com/wp-content/uploads/Templo_Historico_Cucuta.jpg',
         'https://cdn.municipios.com.co/fotos/849-2017-09-15-20-59-636-L.jpg',
@@ -143,17 +153,18 @@ class TravelPlace {
       ],
       statusTag: StatusTag.event,
       user: TravelUser.mario,
-      locationDesc: 'QUINTANA ROO Mexico, in southeastern Mexico',
+      locationDesc: 'villa del Rosario, Norte de Santander',
     ),
     TravelPlace(
       id: '8',
       name: 'Salazar',
+      subtitle: 'salazar',
       likes: 140,
       shared: 49,
       description:
-          'Tulum fue una ciudad amurallada de la cultura maya ubicada en el '
-          'Estado de Quintana Roo, en el sureste de México, en la costa'
-          ' del mar Caribe.',
+          'Salazar es un municipio situado en el departamento de Norte de Santander, Colombia. Es conocido por su producción agrícola, en particular de café y productos lácteos.'
+          'Salazar cuenta con un hermoso entorno natural, con montañas y ríos. Además, en el municipio se celebran festividades como la Feria Agropecuaria y Artesanal de Salazar y la Fiesta de la Empanada.'
+          ,
       imagesUrl: [
         'https://visitcucuta.com/wp-content/uploads/2022/06/IMAGENES-SALAZAR-DE-LAS-PALMAS-NORTE-DE-SANTANDER-DERECHOS-DE-AUTOR-FABIAN-ROMERO-COLOMBIA-13-820x615.jpg.webp',
         'https://i0.wp.com/visitcucuta.com/wp-content/uploads/2022/06/IMAGENES-SALAZAR-DE-LAS-PALMAS-NORTE-DE-SANTANDER-DERECHOS-DE-AUTOR-FABIAN-ROMERO-COLOMBIA-11.jpg?resize=820%2C615&ssl=1',
@@ -161,17 +172,18 @@ class TravelPlace {
       ],
       statusTag: StatusTag.event,
       user: TravelUser.mario,
-      locationDesc: 'QUINTANA ROO Mexico, in southeastern Mexico',
+      locationDesc: 'Salazar, Norte de Santander',
     ),
     TravelPlace(
       id: '9',
       name: 'Durania',
+      subtitle: 'Durania',
       likes: 140,
       shared: 49,
       description:
-          'Tulum fue una ciudad amurallada de la cultura maya ubicada en el '
-          'Estado de Quintana Roo, en el sureste de México, en la costa'
-          ' del mar Caribe.',
+          'Durania es un municipio colombiano ubicado en el departamento de Norte de Santander. Se caracteriza por su belleza natural, con paisajes montañosos y una gran diversidad de flora y fauna. '
+          'El municipio cuenta con varias cascadas y ríos, ideales para realizar actividades al aire libre como senderismo y ecoturismo. '
+          'Durania también es reconocida por su producción de café y su festival anual del Café y la Guadua.',
       imagesUrl: [
         'https://turismonortedesantander.com/wp-content/uploads/Leon_estatua_durania.jpg',
         'https://turismonortedesantander.com/wp-content/uploads/Durania_norte-de-santander.jpg',
@@ -179,58 +191,65 @@ class TravelPlace {
       ],
       statusTag: StatusTag.event,
       user: TravelUser.mario,
-      locationDesc: 'QUINTANA ROO Mexico, in southeastern Mexico',
+      locationDesc: 'Durania, Norte de Santander',
     ),
     TravelPlace(
       id: '10',
       name: 'Labateca',
+      subtitle: 'Labateca',
       likes: 14,
       shared: 49,
       description:
-          'Labateca es un municipio ubicado en la región sur de Norte de Santandera  tiene  '
-          'el privilegio de poseer caídas de agua de aproximadamente 100 metros de altura,'
-          'senderos naturales y fincas dedicadas al cultivo de café orgánico tipo exportación.',
+          'Labateca es un municipio colombiano ubicado en el departamento de Norte de Santander. Es reconocido por su belleza natural y su clima agradable.'
+          'El municipio cuenta con paisajes montañosos y áreas protegidas, como el Parque Nacional Natural Tamá.'
+          'Labateca también es conocida por su producción agrícola, en especial de café.',
       imagesUrl: [
         'https://visitcucuta.com/wp-content/uploads/2020/01/Cascada-de-Lirgua-1-820x615.jpg.webp',
         'https://visitcucuta.com/wp-content/uploads/2020/01/Municipio-de-Labateca-4-820x615.jpg.webp',
         'https://www.viajarenverano.com/wp-content/uploads/2019/02/Labateca-Plaza.jpg'
       ],
+      
       statusTag: StatusTag.event,
       user: TravelUser.mario,
-      locationDesc: 'QUINTANA ROO Mexico, in southeastern Mexico',
+      locationDesc: 'Labateca, Norte de Santander',
     ),
   ];
   static final collectionPlaces = [
     TravelPlace(
       name: 'San Miguel de Allende',
+      subtitle: 'Chinacota',
       imagesUrl: [
-        'https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=60'
+        'https://www.viajarenverano.com/wp-content/uploads/2019/02/Labateca-Plaza.jpg'
       ],
       user: TravelUser.mario,
     ),
     TravelPlace(
       name: 'Chichen Itza',
+      subtitle: 'Chinacota',
       imagesUrl: [
-        'https://images.unsplash.com/photo-1518638150340-f706e86654de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=867&q=60'
+        'https://turismonortedesantander.com/wp-content/uploads/Piscina_Durania_norte-de-santander.jpg'
       ],
       user: TravelUser.mario,
     ),
     TravelPlace(
       name: 'Ciudad de Mexico',
+      subtitle: 'Chinacota',
       imagesUrl: [
-        'https://images.unsplash.com/photo-1574493264149-87880133a2ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=60'
+        'https://www.pamplona-nortedesantander.gov.co/MiMunicipio/PublishingImages/Paginas/Sitios-de-Interes-/CASA-AGUEDA-GALLARDO-PAMPLONA.png'
       ],
       user: TravelUser.mario,
     ),
     TravelPlace(
       name: 'Teotihuacan',
+      subtitle: 'Chinacota',
       imagesUrl: [
-        'https://images.unsplash.com/photo-1575351881847-b3bf188d9d0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=60'
+        'https://i0.wp.com/visitcucuta.com/wp-content/uploads/2022/06/IMAGENES-SALAZAR-DE-LAS-PALMAS-NORTE-DE-SANTANDER-DERECHOS-DE-AUTOR-FABIAN-ROMERO-COLOMBIA-11.jpg?resize=820%2C615&ssl=1'
       ],
       user: TravelUser.mario,
     ),
     TravelPlace(
       name: 'Taxco',
+      subtitle: 'Chinacota',
       imagesUrl: [
         'https://images.unsplash.com/photo-1595781514079-2abd0a36f892?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=60'
       ],
@@ -238,8 +257,9 @@ class TravelPlace {
     ),
     TravelPlace(
       name: 'Acapulco',
+      subtitle: 'Chinacota',
       imagesUrl: [
-        'https://images.unsplash.com/photo-1624979575293-10e2113ed91d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=60'
+        'https://radionacional-v3.s3.amazonaws.com/s3fs-public/styles/portadas_relaciona_4_3/public/node/article/field_image/whatsapp_image_2019-11-29_at_3.23.28_pm.jpeg?h=7b436a88&itok=THRV4iyb'
       ],
       user: TravelUser.luna,
     ),

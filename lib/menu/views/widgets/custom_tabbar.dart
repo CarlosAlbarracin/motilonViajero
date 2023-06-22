@@ -4,7 +4,7 @@ import 'package:motilon_viajero/menu/theme.dart';
 
 class Customtabbar extends StatelessWidget {
   final List<String> titles;
-  Customtabbar({required this.titles});
+  const Customtabbar({super.key, required this.titles});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class Customtabbar extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       children: titles
           .map((e) => Padding(
-                padding: EdgeInsets.only(right: 30),
+                padding: const EdgeInsets.only(right: 30),
                 child: Container(
                   height: 30,
                   width: 50,
@@ -28,7 +28,7 @@ class Customtabbar extends StatelessWidget {
                         height: 2,
                         decoration: BoxDecoration(
                             color: mainCOlor,
-                            borderRadius: BorderRadius.all(Radius.circular(4))),
+                            borderRadius: const BorderRadius.all(Radius.circular(4))),
                       )
                     ],
                   ),

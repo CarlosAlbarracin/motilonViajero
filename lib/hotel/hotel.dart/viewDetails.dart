@@ -11,6 +11,8 @@ final List<String> imgList = [
   'https://ak-d.tripcdn.com/images/02233120009sz89rjDC91_R_800_525.jpg'
 ];
 class ViewDetails extends StatefulWidget {
+  const ViewDetails({super.key});
+
   @override
   _ViewDetailsState createState() => _ViewDetailsState();
 }
@@ -35,7 +37,6 @@ class _ViewDetailsState extends State<ViewDetails> {
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
-     List<int> list = [1, 2, 3, 4, 5];
     Size size = MediaQuery.of(context).size;
     ThemeData appTheme = Theme.of(context);
     return Scaffold(
@@ -59,8 +60,9 @@ class _ViewDetailsState extends State<ViewDetails> {
         items: imgList
             .map((item) => Container(
               
-                  child: Center(child: Image.network(item, fit: BoxFit.cover, width: 1000, height: 500,)),
                   color: Colors.white,
+              
+                  child: Center(child: Image.network(item, fit: BoxFit.cover, width: 1000, height: 500,)),
                 ))
             .toList(),
       ),
@@ -71,7 +73,7 @@ class _ViewDetailsState extends State<ViewDetails> {
               right: 0,
               bottom: 0,
               child: Container(
-                padding: EdgeInsets.only(top: 26, left: 20, right: 20),
+                padding: const EdgeInsets.only(top: 26, left: 20, right: 20),
                 height: size.height * 0.54,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(32),
@@ -79,115 +81,129 @@ class _ViewDetailsState extends State<ViewDetails> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Hotel", style: appTheme.textTheme.headline2),
-                    SizedBox(height: 4),
+                    Text("Hotel Casino Internacional", style: appTheme.textTheme.displayMedium),
+                    const SizedBox(height: 4),
                     Row(children: [
-                      Icon(
+                      const Icon(
                         Icons.location_pin,
                         size: 14,
                       ),
-                      SizedBox(width: 12),
+                      const SizedBox(width: 12),
                       Text(
                         "Cucuta",
-                        style: appTheme.textTheme.caption,
+                        style: appTheme.textTheme.bodySmall,
                       )
                     ]),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Rating(rating: 4.5, color: Colors.black),
-                    SizedBox(height: 18),
+                    const SizedBox(height: 18),
                     Row(
                       children: [
                         IconButton(
                             icon: Icon(
                               Icons.remove,
-                              color: appTheme.accentColor,
+                              color: appTheme.colorScheme.secondary,
                             ),
-                            splashColor: appTheme.accentColor,
+                            splashColor: appTheme.colorScheme.secondary,
                             onPressed: () {
                               removePackage();
                             }),
                         Container(
-                          padding: EdgeInsets.only(left: 8, right: 8),
+                          padding: const EdgeInsets.only(left: 8, right: 8),
                           child: Text(
                             numberPackage.toString(),
-                            style: appTheme.textTheme.caption,
+                            style: appTheme.textTheme.bodySmall,
                           ),
                         ),
                         IconButton(
-                            icon: Icon(Icons.add),
+                            icon: const Icon(Icons.add),
                             onPressed: () {
                               addPackage();
                             }),
-                        SizedBox(width: 12),
+                        const SizedBox(width: 12),
                         Icon(
                           Icons.timer_rounded,
-                          color: appTheme.accentColor,
+                          color: appTheme.colorScheme.secondary,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 8,
                         ),
                         Text(
-                          "5 Days",
-                          style: appTheme.textTheme.caption
-                              ?.merge(TextStyle(color: appTheme.accentColor)),
+                          "5 Dias",
+                          style: appTheme.textTheme.bodySmall
+                              ?.merge(TextStyle(color: appTheme.colorScheme.secondary)),
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 8,
                     ),
                     Text(
-                      "Descricion",
-                      style: appTheme.textTheme.headline3
-                          ?.merge(TextStyle(color: Colors.black)),
+                      "Descripcion",
+                      style: appTheme.textTheme.displaySmall
+                          ?.merge(const TextStyle(color: Colors.black)),
                     ),
-                    SizedBox(height: 12),
+                    const SizedBox(height: 12),
                     Text(
-                      "Enjoy your winter vacation with warmth and amazing sightseeing on the mountains. Enjoy the best experience with us!",
+                      "Nuestro hotel en Cúcuta, Colombia, de estilo ejecutivo ",
                       maxLines: 4,
                       overflow: TextOverflow.fade,
-                      style: appTheme.textTheme.bodyText1,
+                      style: appTheme.textTheme.bodyLarge,
                     ),
                     SizedBox(height: size.height*0.02),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        RichText(
-                          text: TextSpan(children: [
-                            TextSpan(
-                                text: "\$400",
-                                style: TextStyle(
-                                    color: appTheme.accentColor,
-                                    fontSize: 32,
-                                    fontWeight: FontWeight.bold)),
-                            TextSpan(
-                                text: "/Package",
-                                style: TextStyle(
-                                    color: appTheme.accentColor,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold))
-                          ]),
-                        ),
-                        ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                primary: appTheme.accentColor,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30)),
-                                elevation: 0,
-                                textStyle: TextStyle(
-                                    fontSize: 18,
-                                    fontFamily: 'PlayFair',
-                                    fontWeight: FontWeight.bold)),
-                            onPressed: () {},
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                "Book Now",
-                                style: appTheme.textTheme.headline3,
-                              ),
-                            ))
-                      ],
-                    )
+                  Expanded(
+  child: Row(
+    children: [
+      Flexible(
+        child: RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: "\$400",
+                style: TextStyle(
+                  color: appTheme.colorScheme.secondary,
+                  fontSize: 28, // Ajusta el tamaño de fuente si es necesario
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              TextSpan(
+                text: "/Paquete",
+                style: TextStyle(
+                  color: appTheme.colorScheme.secondary,
+                  fontSize: 14, // Ajusta el tamaño de fuente si es necesario
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      const SizedBox(width: 10), // Ajusta el espacio entre los elementos si es necesario
+      ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: appTheme.colorScheme.secondary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+          elevation: 0,
+          textStyle: const TextStyle(
+            fontSize: 16, // Ajusta el tamaño de fuente si es necesario
+            fontFamily: 'PlayFair',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        onPressed: () {},
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            "Comprar",
+            style: appTheme.textTheme.displaySmall,
+          ),
+        ),
+      ),
+    ],
+  ),
+),
                   ],
                 ),
               ))

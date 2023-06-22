@@ -121,9 +121,9 @@ class _PlaceScrollState extends State<PlaceScroll> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
+                          const Row(
                             children: [
-                              const Icon(
+                              Icon(
                                 Icons.location_on,
                                 color: Colors.black26,
                               ),

@@ -4,6 +4,8 @@ import 'package:motilon_viajero/menu/theme.dart';
 
 
 class DetailPage extends StatelessWidget {
+  const DetailPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,24 +13,24 @@ class DetailPage extends StatelessWidget {
         children: [
           SafeArea(
             child: Container(
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 top: 400,
               ),
               decoration: BoxDecoration(
                 color: bgColor2,
               ),
               child: Container(
-                margin: EdgeInsets.only(left: 30, right: 30),
+                margin: const EdgeInsets.only(left: 30, right: 30),
                 child: ListView(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 160,
                     ),
                     Text(
                       'Description',
                       style: textStyle2,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 9,
                     ),
                     Text(
@@ -42,16 +44,16 @@ class DetailPage extends StatelessWidget {
           ),
           SafeArea(
             child: Container(
-              margin: EdgeInsets.only(top: 310),
-              padding: EdgeInsets.symmetric(horizontal: 30),
+              margin: const EdgeInsets.only(top: 310),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               height: 230,
               decoration: BoxDecoration(
                   color: bgColor,
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(40),
                       bottomRight: Radius.circular(40))),
               child: ListView(children: [
-                SizedBox(
+                const SizedBox(
                   height: 110,
                 ),
                 Row(
@@ -60,7 +62,7 @@ class DetailPage extends StatelessWidget {
                       "Bali ,",
                       style: textStyle1.copyWith(color: mainCOlor),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 9,
                     ),
                     Text(
@@ -69,7 +71,7 @@ class DetailPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Row(
@@ -80,7 +82,7 @@ class DetailPage extends StatelessWidget {
                         Container(
                           height: 40,
                           width: 40,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               color: Colors.white,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(12))),
@@ -88,7 +90,7 @@ class DetailPage extends StatelessWidget {
                             child: Image.asset('assets/star.png'),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 9,
                         ),
                         Text(
@@ -102,7 +104,7 @@ class DetailPage extends StatelessWidget {
                         Container(
                           height: 40,
                           width: 40,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               color: Colors.white,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(12))),
@@ -110,7 +112,7 @@ class DetailPage extends StatelessWidget {
                             child: Image.asset('assets/awan.png'),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 9,
                         ),
                         Text(
@@ -124,7 +126,7 @@ class DetailPage extends StatelessWidget {
                         Container(
                           height: 40,
                           width: 40,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               color: Colors.white,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(12))),
@@ -132,7 +134,7 @@ class DetailPage extends StatelessWidget {
                             child: Image.asset('assets/pesawat.png'),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 9,
                         ),
                         Text(
@@ -149,7 +151,7 @@ class DetailPage extends StatelessWidget {
           SafeArea(
             child: Container(
               height: 400,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('assets/nusa.jpg'), fit: BoxFit.cover),
                   borderRadius: BorderRadius.only(
@@ -159,14 +161,14 @@ class DetailPage extends StatelessWidget {
           ),
           SafeArea(
               child: Container(
-            margin: EdgeInsets.only(top: 30, left: 30),
+            margin: const EdgeInsets.only(top: 30, left: 30),
             // color: mainCOlor,
             child: Image.asset('assets/back.png'),
           )),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               color: bgColor,
               height: 68,
               child: Row(
@@ -191,7 +193,7 @@ class DetailPage extends StatelessWidget {
                     width: 150,
                     decoration: BoxDecoration(
                         color: mainCOlor,
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                        borderRadius: const BorderRadius.all(Radius.circular(10))),
                     child: Center(
                       child: Text(
                         "Book Now",

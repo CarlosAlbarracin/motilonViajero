@@ -1,5 +1,7 @@
-import 'dart:ui';
 
+
+
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
@@ -27,12 +29,15 @@ class _AnimateMarketMapState extends State<AnimateMarketMap>
   final _pageController = PageController();
   late final AnimationController _animationController;
   int _selectedIndex = 0;
+  LatLng? startLocation;
+  LatLng? endLocation;
+  List<LatLng> polylinePoints = [];
 
   List<Marker> _buildMarkers() {
-    final _markerList = <Marker>[];
+    final markerList = <Marker>[];
     for (int i = 0; i < mapMakers.length; i++) {
       final mapItem = mapMakers[i];
-      _markerList.add(
+      markerList.add(
         Marker(
           height: MARKER_SIZE_EXPANDED,
           width: MARKER_SIZE_EXPANDED,
@@ -56,7 +61,22 @@ class _AnimateMarketMapState extends State<AnimateMarketMap>
         ),
       );
     }
-    return _markerList;
+    return markerList;
+  }
+
+  void updatePolyline() {
+    if (startLocation != null && endLocation != null) {
+      // Clear previous polyline points
+      polylinePoints.clear();
+      
+      // Add start and end points to the polyline
+      polylinePoints.add(startLocation!);
+      polylinePoints.add(endLocation!);
+
+      // You can add more points to the polyline as needed
+
+      setState(() {});
+    }
   }
 
   @override
@@ -75,14 +95,14 @@ class _AnimateMarketMapState extends State<AnimateMarketMap>
 
   @override
   Widget build(BuildContext context) {
-    final _markers = _buildMarkers();
+    final markers = _buildMarkers();
     return Scaffold(
       appBar: AppBar(
-        title: Text('animated'),
+        title: const Text('animated'),
         actions: [
           IconButton(
-            icon: Icon(Icons.filter_alt_outlined),
-            onPressed: () => null,
+            icon: const Icon(Icons.filter_alt_outlined),
+            onPressed: () {},
           ),
         ],
       ),
@@ -104,8 +124,17 @@ class _AnimateMarketMapState extends State<AnimateMarketMap>
                   'id': MAPBOX_STYLE,
                 },
               ),
+              PolylineLayerOptions(
+                polylines: [
+                  Polyline(
+                    points: polylinePoints,
+                    color: Colors.red,
+                    strokeWidth: 3.0,
+                  ),
+                ],
+              ),
               MarkerLayerOptions(
-                markers: _markers,
+                markers: markers,
               ),
               MarkerLayerOptions(
                 markers: [
@@ -135,6 +164,58 @@ class _AnimateMarketMapState extends State<AnimateMarketMap>
                   mapMarket: item,
                 );
               },
+            ),
+          ),
+          Positioned(
+            top: 20,
+            left: 20,
+            right: 20,
+            child: Column(
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Start Location',
+                    suffixIcon: IconButton(
+                      icon: Icon(Icons.clear),
+                      onPressed: () {
+                        setState(() {
+                          startLocation = null;
+                          updatePolyline();
+                        });
+                      },
+                    ),
+                  ),
+                  onChanged: (value) {
+                    // Convert value to LatLng and assign to startLocation
+                    setState(() {
+                      startLocation = LatLng(0, 0);  // Replace with your conversion logic
+                      updatePolyline();
+                    });
+                  },
+                ),
+                SizedBox(height: 16),
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: 'End Location',
+                    suffixIcon: IconButton(
+                      icon: Icon(Icons.clear),
+                      onPressed: () {
+                        setState(() {
+                          endLocation = null;
+                          updatePolyline();
+                        });
+                      },
+                    ),
+                  ),
+                  onChanged: (value) {
+                    // Convert value to LatLng and assign to endLocation
+                    setState(() {
+                      endLocation = LatLng(0, 0);  // Replace with your conversion logic
+                      updatePolyline();
+                    });
+                  },
+                ),
+              ],
             ),
           ),
         ],
@@ -173,7 +254,7 @@ class _MyLocationMaker extends AnimatedWidget {
   Widget build(BuildContext context) {
     final value = (listenable as Animation<double>).value;
     final newValue = lerpDouble(0.5, 1.0, value)!;
-    final size = 50.0;
+    const size = 50.0;
     return Center(
         child: Stack(
       children: [
@@ -191,7 +272,7 @@ class _MyLocationMaker extends AnimatedWidget {
           child: Container(
             height: 20,
             width: 20,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.blue,
               shape: BoxShape.circle,
             ),
@@ -212,9 +293,9 @@ class _MapItemDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _styleTitle = TextStyle(
+    const styleTitle = TextStyle(
         color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold);
-    final _styleAdress = TextStyle(color: Colors.grey[800], fontSize: 20);
+    final styleAdress = TextStyle(color: Colors.grey[800], fontSize: 20);
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Card(
@@ -235,12 +316,12 @@ class _MapItemDetail extends StatelessWidget {
                       children: [
                         Text(
                           mapMarket.title,
-                          style: _styleTitle,
+                          style: styleTitle,
                         ),
                         const SizedBox(
                           height: 10,
                         ),
-                        Text(mapMarket.address, style: _styleAdress),
+                        Text(mapMarket.address, style: styleAdress),
                         Center(
                           child: Expanded(
                             child: RatingBar.builder(
@@ -248,10 +329,10 @@ class _MapItemDetail extends StatelessWidget {
                               initialRating: 3.5,
                               itemSize: 20,
                               itemBuilder: (context, _) {
-                                return Icon(Icons.star, color: Colors.amber);
+                                return const Icon(Icons.star, color: Colors.amber);
                               },
-                              onRatingUpdate: (raiting) {
-                                print(raiting);
+                              onRatingUpdate: (rating) {
+                                print(rating);
                               },
                             ),
                           ),
@@ -264,10 +345,10 @@ class _MapItemDetail extends StatelessWidget {
             ),
             MaterialButton(
               padding: EdgeInsets.zero,
-              onPressed: () => null,
+              onPressed: () {},
               color: Colors.blueGrey,
               elevation: 6,
-              child: Text(
+              child: const Text(
                 'Llama',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),

@@ -7,14 +7,16 @@ import 'package:motilon_viajero/menu/theme.dart';
 class PlaceCard extends StatelessWidget {
   final Place place;
   final int index;
-  PlaceCard({required this.place, required this.index});
+  final VoidCallback onPressed;
+  
+  const PlaceCard({super.key, required this.place, required this.index, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 170,
       width: 120,
-      margin: EdgeInsets.only(top: 20),
+      margin: const EdgeInsets.only(top: 20),
       child: Column(
         children: [
           Stack(
@@ -23,7 +25,7 @@ class PlaceCard extends StatelessWidget {
                 height: 120,
                 width: 120,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20)),
                     image: DecorationImage(
@@ -38,7 +40,7 @@ class PlaceCard extends StatelessWidget {
                         width: 70,
                         decoration: BoxDecoration(
                           color: mainCOlor,
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                               topRight: Radius.circular(20),
                               bottomLeft: Radius.circular(30)),
                         ),
@@ -46,7 +48,7 @@ class PlaceCard extends StatelessWidget {
                           child: Image.asset('assets/start.png'),
                         ),
                       ))
-                  : SizedBox()
+                  : const SizedBox()
             ],
           ),
           Container(
@@ -54,7 +56,7 @@ class PlaceCard extends StatelessWidget {
             height: 50,
             decoration: BoxDecoration(
               color: mainCOlor,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(20),
                   bottomRight: Radius.circular(20)),
             ),

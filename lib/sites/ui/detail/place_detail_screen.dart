@@ -23,7 +23,7 @@ class PlaceDetailScreen extends StatefulWidget {
 class _PlaceDetailScreenState extends State<PlaceDetailScreen> {
   late ScrollController _controller;
   late ValueNotifier<double> bottomPercentNotifier;
-  bool _isAnimatingScroll = false;
+  final bool _isAnimatingScroll = false;
 
   void _scrollListener() {
     final percent =
@@ -31,51 +31,14 @@ class _PlaceDetailScreenState extends State<PlaceDetailScreen> {
     bottomPercentNotifier.value = (percent / .3).clamp(0.0, 1.0);
   }
 
-  void _isScrollingListener() {
-    final percent = _controller.position.pixels / widget.screenHeight;
-    if (!_controller.position.isScrollingNotifier.value) {
-      if (percent < .3 && percent > .1) {
-        setState(() => _isAnimatingScroll = true);
-        _controller
-            .animateTo(
-              widget.screenHeight * .3,
-              duration: kThemeAnimationDuration,
-              curve: Curves.decelerate,
-            )
-            .then((value) => setState(() => _isAnimatingScroll = false));
-      }
-      if (percent < .1 && percent > 0) {
-        setState(() => _isAnimatingScroll = true);
-        _controller
-            .animateTo(
-              0,
-              duration: kThemeAnimationDuration,
-              curve: Curves.decelerate,
-            )
-            .then((value) => setState(() => _isAnimatingScroll = false));
-      }
-      if (percent < .6 && percent > .3) {
-        setState(() => _isAnimatingScroll = true);
-        _controller
-            .animateTo(
-              widget.screenHeight * .3,
-              duration: kThemeAnimationDuration,
-              curve: Curves.decelerate,
-            )
-            .then((value) => setState(() => _isAnimatingScroll = false));
-      }
-    }
-  }
+  
 
   @override
   void initState() {
     _controller =
         ScrollController(initialScrollOffset: widget.screenHeight * .3);
     _controller.addListener(_scrollListener);
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _controller.position.isScrollingNotifier
-          .addListener(_isScrollingListener);
-    });
+    
     bottomPercentNotifier = ValueNotifier(1);
     super.initState();
   }
@@ -145,7 +108,7 @@ class _PlaceDetailScreenState extends State<PlaceDetailScreen> {
                          
                           const SizedBox(height: 20),
                           const Text(
-                            'PLACES IN THIS COLLECTION',
+                            'Lugares que visitar',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ],

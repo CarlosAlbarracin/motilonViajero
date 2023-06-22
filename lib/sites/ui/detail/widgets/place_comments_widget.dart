@@ -30,52 +30,7 @@ class PlaceCommentsWidget extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: FittedBox(
                 fit: BoxFit.scaleDown,
-                child: Container(
-                  height: 60,
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  decoration: BoxDecoration(
-                    color: Colors.deepPurple.shade800,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Row(
-                    children: [
-                      for (var i = 0; i < 3; i++)
-                        Align(
-                          widthFactor: .7,
-                          child: CircleAvatar(
-                            radius: 15,
-                            backgroundColor: Colors.white,
-                            child: Padding(
-                              padding: const EdgeInsets.all(2),
-                              child: CircleAvatar(
-                                backgroundImage: CachedNetworkImageProvider(
-                                  TravelUser.users[i].urlPhoto,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      const SizedBox(width: 10),
-                      const Text(
-                        'Comments',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      const Text(
-                        '120',
-                        style: TextStyle(
-                          color: Colors.white70,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      const Icon(Icons.arrow_forward),
-                    ],
-                  ),
-                ),
+                
               ),
             ),
           ),

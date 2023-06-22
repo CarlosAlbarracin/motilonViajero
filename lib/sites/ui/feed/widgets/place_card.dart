@@ -68,8 +68,7 @@ class _ActionButtons extends StatelessWidget {
         TextButton.icon(
           onPressed: () {},
           style: TextButton.styleFrom(
-            primary: Colors.white,
-            shape: const StadiumBorder(),
+            foregroundColor: Colors.white, shape: const StadiumBorder(),
           ),
           icon: const Icon(CupertinoIcons.heart),
           label: Text(place.likes.toString()),
@@ -77,8 +76,7 @@ class _ActionButtons extends StatelessWidget {
         TextButton.icon(
           onPressed: () {},
           style: TextButton.styleFrom(
-            primary: Colors.white,
-            shape: const StadiumBorder(),
+            foregroundColor: Colors.white, shape: const StadiumBorder(),
           ),
           icon: const Icon(CupertinoIcons.reply),
           label: Text(place.shared.toString()),
@@ -89,30 +87,27 @@ class _ActionButtons extends StatelessWidget {
 }
 
 class _UserInformationRow extends StatelessWidget {
-  const _UserInformationRow({required this.user});
+  const _UserInformationRow({required this.subtitle});
 
-  final TravelUser user;
+  final TravelUser subtitle;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        CircleAvatar(
-          backgroundColor: Colors.white,
-          backgroundImage: CachedNetworkImageProvider(user.urlPhoto),
-        ),
+        
         const SizedBox(width: 10),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              user.name,
+              subtitle.name,
               style: context.bodyText1.copyWith(
                 color: Colors.white,
               ),
             ),
             Text(
-              'yesterday at 9:10 p.m.',
+              '',
               style: context.bodyText1.copyWith(
                 color: Colors.white70,
               ),

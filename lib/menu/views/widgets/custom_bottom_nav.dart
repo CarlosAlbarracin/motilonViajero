@@ -4,6 +4,8 @@ import 'package:motilon_viajero/menu/theme.dart';
 
 
 class CustomNavbar extends StatelessWidget {
+  const CustomNavbar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,8 +17,8 @@ class CustomNavbar extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image(image: AssetImage('assets/home.png')),
-              SizedBox(
+              const Image(image: AssetImage('assets/home.png')),
+              const SizedBox(
                 width: 8,
               ),
               Container(
@@ -31,9 +33,9 @@ class CustomNavbar extends StatelessWidget {
               )
             ],
           ),
-          Image(image: AssetImage('assets/Notif.png')),
-          Image(image: AssetImage('assets/Menu.png')),
-          Image(image: AssetImage('assets/Setting.png')),
+          const Image(image: AssetImage('assets/Notif.png')),
+          const Image(image: AssetImage('assets/Menu.png')),
+          const Image(image: AssetImage('assets/Setting.png')),
         ],
       ),
     );

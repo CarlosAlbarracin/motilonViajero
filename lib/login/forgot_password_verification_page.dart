@@ -21,28 +21,28 @@ class _ForgotPasswordVerificationPageState extends State<ForgotPasswordVerificat
 
   @override
   Widget build(BuildContext context) {
-    double _headerHeight = 300;
+    double headerHeight = 300;
 
     return Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                height: _headerHeight,
+              SizedBox(
+                height: headerHeight,
                 child: HeaderWidget(
-                    _headerHeight, true, Icons.privacy_tip_outlined),
+                    headerHeight, true, Icons.privacy_tip_outlined),
               ),
               SafeArea(
                 child: Container(
-                  margin: EdgeInsets.fromLTRB(25, 10, 25, 10),
-                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  margin: const EdgeInsets.fromLTRB(25, 10, 25, 10),
+                  padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                   child: Column(
                     children: [
                       Container(
                         alignment: Alignment.topLeft,
-                        margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                        child: Column(
+                        margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                        child: const Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -67,7 +67,7 @@ class _ForgotPasswordVerificationPageState extends State<ForgotPasswordVerificat
                           ],
                         ),
                       ),
-                      SizedBox(height: 40.0),
+                      const SizedBox(height: 40.0),
                       Form(
                         key: _formKey,
                         child: Column(
@@ -76,7 +76,7 @@ class _ForgotPasswordVerificationPageState extends State<ForgotPasswordVerificat
                               length: 4,
                               width: 300,
                               fieldWidth: 50,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 30
                               ),
                               textFieldAlignment: MainAxisAlignment.spaceAround,
@@ -87,11 +87,11 @@ class _ForgotPasswordVerificationPageState extends State<ForgotPasswordVerificat
                                 });
                               },
                             ),
-                            SizedBox(height: 50.0),
+                            const SizedBox(height: 50.0),
                             Text.rich(
                               TextSpan(
                                 children: [
-                                  TextSpan(
+                                  const TextSpan(
                                     text: "If you didn't receive a code! ",
                                     style: TextStyle(
                                       color: Colors.black38,
@@ -110,7 +110,7 @@ class _ForgotPasswordVerificationPageState extends State<ForgotPasswordVerificat
                                           },
                                         );
                                       },
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         color: Colors.orange
                                     ),
@@ -118,31 +118,31 @@ class _ForgotPasswordVerificationPageState extends State<ForgotPasswordVerificat
                                 ],
                               ),
                             ),
-                            SizedBox(height: 40.0),
+                            const SizedBox(height: 40.0),
                             Container(
                               decoration: _pinSuccess ? ThemeHelper().buttonBoxDecoration(context):ThemeHelper().buttonBoxDecoration(context, "#AAAAAA","#757575"),
                               child: ElevatedButton(
                                 style: ThemeHelper().buttonStyle(),
+                                onPressed: _pinSuccess ? () {
+                                  Navigator.of(context).pushAndRemoveUntil(
+                                      MaterialPageRoute(
+                                          builder: (context) => const ProfilePage()
+                                      ),
+                                          (Route<dynamic> route) => false
+                                  );
+                                } : null,
                                 child: Padding(
                                   padding: const EdgeInsets.fromLTRB(
                                       40, 10, 40, 10),
                                   child: Text(
                                     "Verify".toUpperCase(),
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.white,
                                     ),
                                   ),
                                 ),
-                                onPressed: _pinSuccess ? () {
-                                  Navigator.of(context).pushAndRemoveUntil(
-                                      MaterialPageRoute(
-                                          builder: (context) => ProfilePage()
-                                      ),
-                                          (Route<dynamic> route) => false
-                                  );
-                                } : null,
                               ),
                             ),
                           ],

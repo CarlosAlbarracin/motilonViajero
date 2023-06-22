@@ -4,11 +4,41 @@ import 'package:motilon_viajero/menu/models/place.dart';
 import 'package:motilon_viajero/menu/theme.dart';
 import 'package:motilon_viajero/menu/views/widgets/event.dart';
 import 'package:motilon_viajero/menu/views/widgets/place_card.dart';
+import 'package:motilon_viajero/routes_tour/screen_routes.dart';
 import 'package:motilon_viajero/views/nabvar.dart';
 
 
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+void navigateToRoute(BuildContext context, int index) {
+    // Aquí puedes implementar la lógica para determinar la ruta correspondiente según el índice seleccionado
+    // Por ejemplo, puedes usar una condición o un switch para decidir la ruta
+
+    if (index == 0) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ScreenVideo(),
+        ),
+      );
+    } else if (index == 1) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ScreenVideo(),
+        ),
+      );
+    } else {
+      // Ruta por defecto si no se cumple ninguna condición
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ScreenVideo(),
+        ),
+      );
+    }
+  }
   @override
   Widget build(BuildContext context) {
     List<String> titles = [
@@ -20,7 +50,7 @@ class HomePage extends StatelessWidget {
       'Pamplona'
     ];
     return Scaffold(
-      drawer: NavBar(   
+      drawer: const NavBar(   
       ),
       appBar: AppBar(
         title: const Text("Menu"),
@@ -30,7 +60,7 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           Container(
-            margin: EdgeInsets.only(top: 30, left: 30, right: 30),
+            margin: const EdgeInsets.only(top: 30, left: 30, right: 30),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -39,45 +69,42 @@ class HomePage extends StatelessWidget {
                     Container(
                       height: 50,
                       width: 50,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           image: DecorationImage(
                               image: AssetImage('assets/user.jpg'),
                               fit: BoxFit.cover)),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 15,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Hello Micelle,',
+                          'Hola Carlos,',
                           style: textStyle2,
                         ),
-                        Text(
-                          'Good Morning,',
-                          style: textStyle4.copyWith(fontSize: 14),
-                        ),
+                       
                       ],
                     ),
                   ],
                 ),
-                Image(image: AssetImage('assets/cari.png'))
+                const Image(image: AssetImage('assets/cari.png'))
               ],
             ),
           ),
          
           Container(
-            margin: EdgeInsets.only(top: 25, left: 30),
+            margin: const EdgeInsets.only(top: 25, left: 30),
             child: Text(
-              "Let’s enjoy your \nVocation",
+              "Disfruta de Norte de Santander ",
               style: textStyle1,
             ),
           ),
           Container(
               height: 30,
-              margin: EdgeInsets.only(top: 25, left: 30),
+              margin: const EdgeInsets.only(top: 25, left: 30),
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: titles.length,
@@ -98,15 +125,15 @@ class HomePage extends StatelessWidget {
                                   decoration: BoxDecoration(
                                       color: mainCOlor,
                                       borderRadius:
-                                          BorderRadius.all(Radius.circular(4))),
+                                          const BorderRadius.all(Radius.circular(4))),
                                 )
-                              : SizedBox()
+                              : const SizedBox()
                         ],
                       ),
                     );
                   })),
           Container(
-            margin: EdgeInsets.only(top: 36, left: 30, right: 30),
+            margin: const EdgeInsets.only(top: 36, left: 30, right: 30),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -122,7 +149,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(left: 30, top: 20),
+            margin: const EdgeInsets.only(left: 30, top: 20),
             height: 200,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -132,13 +159,13 @@ class HomePage extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 20),
                     child: PlaceCard(
                       place: places[index],
-                      index: index,
+                      index: index, onPressed: () {  },
                     ),
                   );
                 }),
           ),
           Container(
-            margin: EdgeInsets.only(left: 30, right: 30, top: 40),
+            margin: const EdgeInsets.only(left: 30, right: 30, top: 40),
             child: Wrap(
               
               //mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -159,7 +186,7 @@ class HomePage extends StatelessWidget {
           Container(
             height: 210,
             width: 230,
-            margin: EdgeInsets.only(top: 40, right: 30, left: 30),
+            margin: const EdgeInsets.only(top: 40, right: 30, left: 30),
             child: ListView.builder(
                 itemCount: gastronomy.length,
                 scrollDirection: Axis.horizontal,
@@ -170,43 +197,57 @@ class HomePage extends StatelessWidget {
                   );
                 }),
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
-          Container(
-            margin: EdgeInsets.only(left: 30, right: 30, top: 40),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Planes turisticos',
-                  style: textStyle2,
-                ),
-                Text(
-                  'See All',
-                  style: textStyle4,
-                )
-              ],
+        Container(
+  margin: const EdgeInsets.only(left: 30, right: 30, top: 40),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Text(
+        'Planes turisticos',
+        style: textStyle2,
+      ),
+      InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ScreenVideo(),
             ),
-          ),
-             Container(
-            height: 210,
-            width: 230,
-            margin: EdgeInsets.only(top: 40, right: 30, left: 30),
-            child: ListView.builder(
-                itemCount: events.length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (_, index) {
-                  return Padding(
-                    padding: const EdgeInsets.only(right: 20),
+          );
+        },
+        child: Text(
+          'See All',
+          style: textStyle4,
+        ),
+      ),
+    ],
+  ),
+),
+Container(
+  height: 210,
+  width: 230,
+  margin: const EdgeInsets.only(top: 40, right: 30, left: 30),
+  child: ListView.builder(
+    itemCount: events.length,
+    scrollDirection: Axis.horizontal,
+    itemBuilder: (_, index) {
+      return Padding(
+        padding: const EdgeInsets.only(right: 20),
+        child: GestureDetector(
+                    onTap: () => navigateToRoute(context, index),
                     child: Event(events[index]),
-                  );
-                }),
-          ),
-          SizedBox(
+                  ),
+      );
+    },
+  ),
+),
+          const SizedBox(
             height: 100,
           ),
-          Text("Qute te parece si agregamos\nuna nueva ciudad",textAlign: TextAlign.start,),
+          const Text("Qute te parece si agregamos\nuna nueva ciudad",textAlign: TextAlign.start,),
         ],
       ),
     );

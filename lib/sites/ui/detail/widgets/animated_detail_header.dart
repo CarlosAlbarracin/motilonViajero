@@ -144,20 +144,18 @@ class _UserInfoContainer extends StatelessWidget {
       ),
       child: Row(
         children: [
-          CircleAvatar(
-            backgroundImage: NetworkImage(place.user.urlPhoto),
-          ),
+        
           const SizedBox(width: 10),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                place.user.name,
+                place.subtitle,
                 style: context.bodyText1,
               ),
               Text(
-                'yesterday at 9:10 p.m.',
+                'Norte de Santander',
                 style: context.bodyText2.copyWith(color: Colors.grey),
               ),
             ],
@@ -166,8 +164,7 @@ class _UserInfoContainer extends StatelessWidget {
           TextButton(
             onPressed: () {},
             style: TextButton.styleFrom(
-              primary: Colors.blue.shade600,
-              textStyle: context.subtitle1,
+              foregroundColor: Colors.blue.shade600, textStyle: context.subtitle1,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
               ),
@@ -204,8 +201,7 @@ class _LikesAndSharesContainer extends StatelessWidget {
           TextButton.icon(
             onPressed: () {},
             style: TextButton.styleFrom(
-              primary: Colors.black,
-              textStyle: context.subtitle1,
+              foregroundColor: Colors.black, textStyle: context.subtitle1,
               shape: const StadiumBorder(),
             ),
             icon: const Icon(
@@ -217,8 +213,7 @@ class _LikesAndSharesContainer extends StatelessWidget {
           TextButton.icon(
             onPressed: () {},
             style: TextButton.styleFrom(
-              primary: Colors.black,
-              textStyle: context.subtitle1,
+              foregroundColor: Colors.black, textStyle: context.subtitle1,
               shape: const StadiumBorder(),
             ),
             icon: const Icon(
@@ -231,8 +226,7 @@ class _LikesAndSharesContainer extends StatelessWidget {
           TextButton.icon(
             onPressed: () {},
             style: TextButton.styleFrom(
-              backgroundColor: Colors.blue.shade100,
-              primary: Colors.blue.shade600,
+              foregroundColor: Colors.blue.shade600, backgroundColor: Colors.blue.shade100,
               textStyle: context.subtitle1,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),

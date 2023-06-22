@@ -6,7 +6,7 @@ import 'package:motilon_viajero/menu/theme.dart';
 
 class Event extends StatelessWidget {
   final Place place;
-  Event(this.place);
+  const Event(this.place, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class Event extends StatelessWidget {
       padding: const EdgeInsets.only(left: 20, top: 20),
       decoration: BoxDecoration(
           // color: mainCOlor,
-          borderRadius: BorderRadius.all(Radius.circular(20)),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
           image: DecorationImage(
               image: AssetImage(place.imageUrl), fit: BoxFit.cover)),
             
@@ -25,20 +25,20 @@ class Event extends StatelessWidget {
         children: [
           
           Text(
-            '${place.city}',
+            place.city,
             style: textStyle3.copyWith(fontWeight: FontWeight.bold),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Row(
             children: [
-              Image(image: AssetImage('assets/map.png')),
-              SizedBox(
+              const Image(image: AssetImage('assets/map.png')),
+              const SizedBox(
                 width: 6,
               ),
               Text(
-                '${place.country}',
+                place.country,
                 style: textStyle3.copyWith(fontWeight: FontWeight.bold),
               ),
             ],

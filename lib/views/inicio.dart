@@ -36,15 +36,15 @@ class Hotel extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'Abiansemal, Indonesia',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
                   Row(
-                    children: const [
+                    children: [
                       Icon(
                         Icons.star,
                         size: 15,
@@ -73,8 +73,8 @@ class Hotel extends StatelessWidget {
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                       color: Colors.grey)),
-              Row(
-                children: const [
+              const Row(
+                children: [
                   Text(r'$360 ',
                       style: TextStyle(
                         fontSize: 16,
@@ -117,15 +117,15 @@ class Hotel extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'Santorini, Greece',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
                   Row(
-                    children: const [
+                    children: [
                       Icon(
                         Icons.star,
                         size: 15,
@@ -154,8 +154,8 @@ class Hotel extends StatelessWidget {
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                       color: Colors.grey)),
-              Row(
-                children: const [
+              const Row(
+                children: [
                   Text(r'$285 ',
                       style: TextStyle(
                         fontSize: 16,
@@ -198,15 +198,15 @@ class Hotel extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'Lake Arrowhead, California, US',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
                   Row(
-                    children: const [
+                    children: [
                       Icon(
                         Icons.star,
                         size: 15,
@@ -235,8 +235,8 @@ class Hotel extends StatelessWidget {
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                       color: Colors.grey)),
-              Row(
-                children: const [
+              const Row(
+                children: [
                   Text(r'$261 ',
                       style: TextStyle(
                         fontSize: 16,
